@@ -15,7 +15,7 @@ namespace QAGroup1Project
     internal class SiteTest
     {// in here goes each individual test's code
 
-        
+        import org.openqa.selenium.support.ui.Select;
         //CONNOR'S BLOCK
         //SIGNUP TEST
         public static void SignUp(IWebDriver driver, string firstname, string lastname, string email, string screenname, string password, string confirmpassword, string phonenumber, string address, string postalcode, string url, string description, string location)
@@ -25,36 +25,38 @@ namespace QAGroup1Project
             driver.Url = ("http://10.157.123.12/site1/signup.php"); //MAKE SURE YOU'RE LOGGED INTO FORTICLIENT
 
             //get elements for the page
-            IWebElement txtFirstName = SiteWebElement.txtFirstName(driver);
-            IWebElement txtLastName = SiteWebElement.txtLastName(driver);
-            IWebElement txtEmail = SiteWebElement.txtEmail(driver);
-            IWebElement txtScreenName = SiteWebElement.txtScreenName(driver);
-            IWebElement txtPassword = SiteWebElement.txtPassword(driver);
-            IWebElement txtConfirmPassword = SiteWebElement.txtConfirmPassword(driver);
-            IWebElement txtPhoneNumber = SiteWebElement.txtPhoneNumber(driver);
-            IWebElement txtAddress = SiteWebElement.txtAddress(driver);
-            IWebElement drpProvince = SiteWebElement.drpProvince(driver);
-            IWebElement txtPostalCode = SiteWebElement.txtPostalCode(driver);
-            IWebElement txtURL = SiteWebElement.txtURL(driver);
-            IWebElement txtDescription = SiteWebElement.txtDescription(driver);
-            IWebElement txtLocation = SiteWebElement.txtLocation(driver);
+            IWebElement ctxtFirstName = SiteWebElement.ctxtFirstName(driver);
+            IWebElement ctxtLastName = SiteWebElement.ctxtLastName(driver);
+            IWebElement ctxtEmail = SiteWebElement.ctxtEmail(driver);
+            IWebElement ctxtScreenName = SiteWebElement.ctxtScreenName(driver);
+            IWebElement ctxtPassword = SiteWebElement.ctxtPassword(driver);
+            IWebElement ctxtConfirmPassword = SiteWebElement.ctxtConfirmPassword(driver);
+            IWebElement ctxtPhoneNumber = SiteWebElement.ctxtPhoneNumber(driver);
+            IWebElement ctxtAddress = SiteWebElement.ctxtAddress(driver);
+            IWebElement cdrpProvince = SiteWebElement.cdrpProvince(driver);
+            IWebElement ctxtPostalCode = SiteWebElement.ctxtPostalCode(driver);
+            IWebElement ctxtURL = SiteWebElement.ctxtURL(driver);
+            IWebElement ctxtDescription = SiteWebElement.ctxtDescription(driver);
+            IWebElement ctxtLocation = SiteWebElement.ctxtLocation(driver);
 
             //what gets typed, what gets clicked
-            txtFirstName.SendKeys(firstname);
-            txtLastName.SendKeys(lastname);
-            txtEmail.SendKeys(email);
-            txtScreenName.SendKeys(screenname);
-            txtPassword.SendKeys(password);
-            txtConfirmPassword.SendKeys(confirmpassword);
-            txtPhoneNumber.SendKeys(phonenumber);
-            txtAddress.SendKeys(address);
+            ctxtFirstName.SendKeys(firstname);
+            ctxtLastName.SendKeys(lastname);
+            ctxtEmail.SendKeys(email);
+            ctxtScreenName.SendKeys(screenname);
+            ctxtPassword.SendKeys(password);
+            ctxtConfirmPassword.SendKeys(confirmpassword);
+            ctxtPhoneNumber.SendKeys(phonenumber);
+            ctxtAddress.SendKeys(address);
 
-            drpProvince.Click();
+            //select province
+            cdrpProvince.Click();
+            cdrpProvince.selectByIndex("ANTARCTICA");
 
-            txtPostalCode.SendKeys(postalcode);
-            txtURL.SendKeys(url);
-            txtDescription.SendKeys(description);
-            txtLocation.SendKeys(location);
+            ctxtPostalCode.SendKeys(postalcode);
+            ctxtURL.SendKeys(url);
+            ctxtDescription.SendKeys(description);
+            ctxtLocation.SendKeys(location);
 
         }
 
