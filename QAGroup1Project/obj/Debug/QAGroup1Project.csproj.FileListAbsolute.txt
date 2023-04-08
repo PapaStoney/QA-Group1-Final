@@ -34,3 +34,4 @@ C:\repos2\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Runtime.CompilerServi
 C:\repos2\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.csproj.CopyComplete
 C:\repos2\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.exe
 C:\repos2\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.pdb
+C:\repos2\QA-Group1-Final\QAGroup1Project\bin\Debug\WebDriver.Support.dll

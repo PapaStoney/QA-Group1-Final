@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using Bogus;
+using OpenQA.Selenium.Support.UI;
 
 namespace QAGroup1Project
 {
@@ -19,18 +20,18 @@ namespace QAGroup1Project
             try
             {
                 firstPage(driver, "nick", "asdf");
+                //wait for the URL to change 
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-                IWebElement divPage = driver.FindElement(By.TagName("title"));
-                String strPage = divPage.Text;
-
-                if (strPage.Contains("Bitter - Social Media for Trolls, Narcissits, Bullies and Presidents"))
+                // Check if the URL contains the expected URL
+                if (driver.Url.Contains("http://10.157.123.12/site1/index.php"))
                 {
                     return true;
                 }
                 else
                 {
                     return false;
-                }              
+                }
             }
             catch (Exception e)
             {

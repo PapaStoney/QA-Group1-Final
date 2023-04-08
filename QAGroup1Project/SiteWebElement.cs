@@ -24,5 +24,28 @@ namespace QAGroup1Project
             IWebElement txtPassword = driver.FindElement(By.Id("password"));
             return txtPassword;
         }
+        public static IWebElement SignUpButton(IWebDriver driver)
+        {
+            IWebElement txtSignup = driver.FindElement(By.LinkText("Click Here"));
+            return txtSignup;
+        }
+        public static IWebElement LikeButton(IWebDriver driver)
+        {
+            IWebElement btnLike = driver.FindElement(By.Name("likeClick"));
+            return btnLike;
+        }
+
+        public static IWebElement RetweetButton(IWebDriver driver)
+        {
+            IWebElement btnRetweet = driver.FindElement(By.Name("retweetClick"));
+            return btnRetweet;
+        }
+
+        public static IWebElement ReplyButton(IWebDriver driver)
+        {
+            IWebElement btnReply = driver.FindElement(By.Name("replyClick"));
+            return btnReply;
+        }
+
     }
 }
