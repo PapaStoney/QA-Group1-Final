@@ -18,8 +18,8 @@ namespace QAGroup1Project
         {// in here goes the code that will run the tests
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
 
-            bool blnTest1 = SiteTest.TestLogin01(driver);
-            if(blnTest1)
+            bool logintest01 = SiteTest.TestLogin01(driver);
+            if(logintest01)
             {
                 Console.WriteLine("Test 1: Valid Submission passed");
             }
@@ -27,6 +27,27 @@ namespace QAGroup1Project
             {
                 Console.WriteLine("Test 1: Valid Submission failed");
             }
+
+            bool logintest02 = SiteTest.TestLogin02(driver); 
+            if (logintest02)
+            {
+                Console.WriteLine("Test 2: Invalid Submission passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 2: Invalid Submission failed");
+            }
+
+            bool navtest01 = SiteTest.TestNav01(driver);
+            if (navtest01)
+            {
+                Console.WriteLine("Test 3: Valid Navigation passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 3: Valid Navigation failed");
+            }
         }
+      
     }
 }

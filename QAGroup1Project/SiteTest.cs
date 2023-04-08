@@ -15,6 +15,7 @@ namespace QAGroup1Project
 {
     internal class SiteTest
     {// in here goes each individual test's code
+        //JULIE
         public static bool TestLogin01(IWebDriver driver)
         {
             try
@@ -25,6 +26,57 @@ namespace QAGroup1Project
 
                 // Check if the URL contains the expected URL
                 if (driver.Url.Contains("http://10.157.123.12/site1/index.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool TestLogin02(IWebDriver driver)
+        {
+            try
+            {
+                firstPage(driver, "julie", "julie1234");
+                //wait for the URL to change 
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                // Check if the URL contains the expected URL
+                if (driver.Url.Contains("http://10.157.123.12/site1/index.php"))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool TestNav01(IWebDriver driver)
+        {
+            try
+            {
+                firstPage(driver, "nick", "asdf");
+
+                //get the profile link 
+                IWebElement lnkProfile = SiteWebElement.profileLink(driver);
+                //click the profile link 
+                lnkProfile.Click();
+                //wait for the link to change 
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                //check if the url contains the expected url 
+                if (driver.Url.Contains("http://10.157.123.12/site1/userpage.php?user_id=1025"))
                 {
                     return true;
                 }

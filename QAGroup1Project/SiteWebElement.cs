@@ -47,5 +47,23 @@ namespace QAGroup1Project
             return btnReply;
         }
 
+        public static IWebElement searchButton(IWebDriver driver)
+        {
+            IWebElement btnSearch = driver.FindElement(By.XPath("//button[@type ='submit' and text()='Search']"));
+            return btnSearch;
+        }
+
+        public static IWebElement searchBox(IWebDriver driver)
+        {
+            IWebElement txtSearch = driver.FindElement(By.Name("text"));
+            return txtSearch;
+        }
+
+        public static IWebElement profileLink(IWebDriver driver)
+        {
+            IWebElement lnkProfile = driver.FindElement(By.LinkText("nick taggart"));
+            return lnkProfile;
+        }
+
     }
 }
