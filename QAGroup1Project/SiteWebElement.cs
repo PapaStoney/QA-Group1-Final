@@ -24,5 +24,17 @@ namespace QAGroup1Project
             IWebElement txtPassword = driver.FindElement(By.Id("password"));
             return txtPassword;
         }
+
+
+
+
+
+        //CONNOR'S BLOCK
+        //SIGNUP TEST
+        public static IWebElement txtFirstName(IWebDriver driver)
+        {
+            IWebElement txtFirstName = driver.FindElement(By.Id("firstname"));
+            return txtFirstName;
+        }
     }
 }
