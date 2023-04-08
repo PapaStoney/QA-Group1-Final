@@ -17,6 +17,16 @@ namespace QAGroup1Project
         static void Main(string[] args)
         {// in here goes the code that will run the tests
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
+
+            bool blnTest1 = SiteTest.TestLogin01(driver);
+            if(blnTest1)
+            {
+                Console.WriteLine("Test 1: Valid Submission passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 1: Valid Submission failed");
+            }
         }
     }
 }

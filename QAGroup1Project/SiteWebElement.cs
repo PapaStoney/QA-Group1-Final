@@ -14,21 +14,15 @@ namespace QAGroup1Project
 {
     internal class SiteWebElement
     {// in here goes the element grabbing
-        public static IWebElement placeholder1(IWebDriver driver)
+        public static IWebElement SiteUsername(IWebDriver driver)
         {
-            
+            IWebElement txtName = driver.FindElement(By.Id("username"));
+            return txtName;
         }
-        public static IWebElement placeholder2(IWebDriver driver)
+        public static IWebElement SitePassword(IWebDriver driver)
         {
-
-        }
-        public static IWebElement placeholder3(IWebDriver driver)
-        {
-
-        }
-        public static IWebElement placeholder4(IWebDriver driver)
-        {
-
+            IWebElement txtPassword = driver.FindElement(By.Id("password"));
+            return txtPassword;
         }
     }
 }
