@@ -54,6 +54,21 @@ namespace QAGroup1Project
                 return false;
             }
         }
+
+        public static bool TestLogout01(IWebDriver driver)
+        {
+            firstPage(driver, "nick", "asdf");
+            logOut(driver);
+
+            if (driver.Url.Contains("http://10.157.123.12/site1/login.php"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public static bool TestSearch01(IWebDriver driver)
         {
             //load login page
