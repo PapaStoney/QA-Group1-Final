@@ -14,9 +14,12 @@ namespace QAGroup1Project
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {// in here goes the code that will run the tests
+
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
+            driver.Manage().Window.Maximize();
 
             bool logintest01 = SiteTest.TestLogin01(driver);
             if(logintest01)
@@ -38,16 +41,57 @@ namespace QAGroup1Project
                 Console.WriteLine("Test 2: Invalid Submission failed");
             }
 
-            bool navtest01 = SiteTest.TestNav01(driver);
-            if (navtest01)
+            bool searchtest01 = SiteTest.TestSearch01(driver);
+            if (searchtest01)
             {
-                Console.WriteLine("Test 3: Valid Navigation passed");
+                Console.WriteLine("Test 3: Invalid Search passed");
             }
             else
             {
-                Console.WriteLine("Test 3: Valid Navigation failed");
+                Console.WriteLine("Test 3: Invalid Search failed");
             }
+
+            bool searchtest02 = SiteTest.TestSearch02(driver);
+            if (searchtest02)
+            {
+                Console.WriteLine("Test 4: Valid Search passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 4: Valid Search failed");
+            }
+
+            bool navtest01 = SiteTest.TestNav01(driver);
+            if (navtest01)
+            {
+                Console.WriteLine("Test 5: Valid Navigation passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 5: Valid Navigation failed");
+            }
+
+            bool tweettest01 = SiteTest.TestTweet01(driver);
+            if (tweettest01)
+            {
+                Console.WriteLine("Test 6: Valid Tweet reply passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 6: Valid Tweet reply failed");
+            }
+
+            bool tweettest02 = SiteTest.TestTweet02(driver);
+            if (tweettest02)
+            {
+                Console.WriteLine("Test 7: Invalid Tweet reply passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 7: Invalid Tweet reply failed");
+            }
+
+            driver.Quit();
         }
-      
     }
 }

@@ -64,6 +64,17 @@ namespace QAGroup1Project
             IWebElement lnkProfile = driver.FindElement(By.LinkText("nick taggart"));
             return lnkProfile;
         }
+        public static IWebElement replyText(IWebDriver driver)
+        {
+            IWebElement replyTextBox = driver.FindElement(By.Id("replyText"));
+            return replyTextBox;
+        }
+
+        public static IWebElement submitButton(IWebDriver driver)
+        {
+            IWebElement btnSubmit = driver.FindElement(By.Name("submit"));
+            return btnSubmit;
+        }
 
     }
 }
