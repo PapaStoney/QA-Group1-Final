@@ -100,6 +100,7 @@ namespace QAGroup1Project
             {
                 Console.WriteLine("Test 8: Invalid Tweet reply failed");
             }
+
             Thread.Sleep(10000);
             driver.Quit();
         }
