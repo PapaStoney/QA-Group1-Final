@@ -41,56 +41,66 @@ namespace QAGroup1Project
                 Console.WriteLine("Test 2: Invalid Submission failed");
             }
 
-            bool searchtest01 = SiteTest.TestSearch01(driver);
-            if (searchtest01)
+            bool logouttest01 = SiteTest.TestLogout01(driver);
+            if (logouttest01)
             {
-                Console.WriteLine("Test 3: Invalid Search passed");
+                Console.WriteLine("Test 3: Valid Logout passed");
             }
             else
             {
-                Console.WriteLine("Test 3: Invalid Search failed");
+                Console.WriteLine("Test 3: Valid Logout failed");
+            }
+
+            bool searchtest01 = SiteTest.TestSearch01(driver);
+            if (searchtest01)
+            {
+                Console.WriteLine("Test 4: Invalid Search passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 4: Invalid Search failed");
             }
 
             bool searchtest02 = SiteTest.TestSearch02(driver);
             if (searchtest02)
             {
-                Console.WriteLine("Test 4: Valid Search passed");
+                Console.WriteLine("Test 5: Valid Search passed");
             }
             else
             {
-                Console.WriteLine("Test 4: Valid Search failed");
+                Console.WriteLine("Test 5: Valid Search failed");
             }
 
             bool navtest01 = SiteTest.TestNav01(driver);
             if (navtest01)
             {
-                Console.WriteLine("Test 5: Valid Navigation passed");
+                Console.WriteLine("Test 6: Valid Navigation passed");
             }
             else
             {
-                Console.WriteLine("Test 5: Valid Navigation failed");
+                Console.WriteLine("Test 6: Valid Navigation failed");
             }
 
             bool tweettest01 = SiteTest.TestTweet01(driver);
             if (tweettest01)
             {
-                Console.WriteLine("Test 6: Valid Tweet reply passed");
+                Console.WriteLine("Test 7: Valid Tweet reply passed");
             }
             else
             {
-                Console.WriteLine("Test 6: Valid Tweet reply failed");
+                Console.WriteLine("Test 7: Valid Tweet reply failed");
             }
 
             bool tweettest02 = SiteTest.TestTweet02(driver);
             if (tweettest02)
             {
-                Console.WriteLine("Test 7: Invalid Tweet reply passed");
+                Console.WriteLine("Test 8: Invalid Tweet reply passed");
             }
             else
             {
-                Console.WriteLine("Test 7: Invalid Tweet reply failed");
+                Console.WriteLine("Test 8: Invalid Tweet reply failed");
             }
-
+            Thread.Sleep(10000);
             driver.Quit();
         }
     }
