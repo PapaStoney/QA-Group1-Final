@@ -28,10 +28,6 @@ namespace QAGroup1Project
             return txtPassword;
         }
 
-
-
-
-
         //CONNOR'S BLOCK
         //SIGNUP TEST
         public static IWebElement clnkClickHere(IWebDriver driver)
@@ -109,6 +105,5 @@ namespace QAGroup1Project
             IWebElement cbtnSubmit = driver.FindElement(By.Id("button"));
             return cbtnSubmit;
         }
-
     }
 }
