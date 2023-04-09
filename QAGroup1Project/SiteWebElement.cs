@@ -76,5 +76,55 @@ namespace QAGroup1Project
             return btnSubmit;
         }
 
+        public static IWebElement SendToField(IWebDriver driver)
+        {
+            IWebElement send2 = driver.FindElement(By.Name("to"));
+            return send2;
+        }
+
+        public static IWebElement Message(IWebDriver driver)
+        {
+            IWebElement msg = driver.FindElement(By.Name("message"));
+            return msg;
+        }
+
+        public static IWebElement SubBtn(IWebDriver driver)
+        {
+            IWebElement subbtn = driver.FindElement(By.Name("btnMessage"));
+            return subbtn;
+        }
+
+        public static IWebElement ProfileFinder(IWebDriver driver)
+        {
+            IWebElement parentDiv = driver.FindElement(By.ClassName("bold"));
+            
+            IWebElement aTag = parentDiv.FindElement(By.TagName("a"));
+            return aTag;
+        }
+
+        public static IWebElement TopTrending(IWebDriver driver)
+        {
+            IWebElement grandParentDiv = driver.FindElement(By.ClassName("trending img-rounded"));
+
+            IList<IWebElement> divs = grandParentDiv.FindElements(By.ClassName("bold"));
+
+            IWebElement topTrending = divs[1].FindElement(By.TagName("a"));
+
+
+            return topTrending;
+            
+        }
+
+        public static IWebElement TextArea(IWebDriver driver)
+        {
+            IWebElement createTweet = driver.FindElement(By.Id("myTweet"));
+            return createTweet;
+        }
+
+        public static IWebElement btnTweet(IWebDriver driver)
+        {
+            IWebElement btnTweet = driver.FindElement(By.Name("btnTweet"));
+            return btnTweet;
+        }
     }
 }

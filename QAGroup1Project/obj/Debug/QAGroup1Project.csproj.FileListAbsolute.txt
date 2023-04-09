@@ -35,3 +35,40 @@ C:\repos2\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.csproj.CopyC
 C:\repos2\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.exe
 C:\repos2\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.pdb
 C:\repos2\QA-Group1-Final\QAGroup1Project\bin\Debug\WebDriver.Support.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\QAGroup1Project.exe.config
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\QAGroup1Project.exe
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\QAGroup1Project.pdb
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\Bogus.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\Google.Protobuf.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\K4os.Compression.LZ4.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\K4os.Hash.xxHash.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\MySql.Data.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Buffers.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Memory.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Numerics.Vectors.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\WebDriver.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\WebDriver.Support.dll
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\Bogus.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\BouncyCastle.Crypto.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\Google.Protobuf.pdb
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\Google.Protobuf.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\K4os.Compression.LZ4.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\K4os.Hash.xxHash.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\MySql.Data.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Buffers.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Memory.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Numerics.Vectors.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.csproj.AssemblyReference.cache
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.csproj.SuggestedBindingRedirects.cache
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.csproj.CoreCompileInputs.cache
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.csproj.CopyComplete
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.exe
+C:\Selenium\fuck this\QA-Group1-Final\QAGroup1Project\obj\Debug\QAGroup1Project.pdb

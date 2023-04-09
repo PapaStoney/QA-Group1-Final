@@ -91,6 +91,103 @@ namespace QAGroup1Project
                 Console.WriteLine("Test 7: Invalid Tweet reply failed");
             }
 
+            bool testMessage01 = SiteTest.TestMessage01(driver);
+            if (testMessage01)
+            {
+                Console.WriteLine("Test 8: Message with valid data passed");
+            } else
+            {
+                Console.WriteLine("Test 8: Message with valid data failed");
+            }
+
+            bool testMessage02 = SiteTest.TestMessage02(driver);
+            if (testMessage02) 
+            {
+                Console.WriteLine("Test 9: Message with empty data passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 9: Message with empty data failed");
+            }
+
+            bool testMessage03 = SiteTest.TestMessage03(driver);
+            if (testMessage03)
+            {
+                Console.WriteLine("Test 10: Message with no data passed");
+            } else
+            {
+                Console.WriteLine("Test 10: Message with no data failed");
+            }
+
+            bool profile01 = SiteTest.Profile01(driver);
+            if (profile01)
+            {
+                Console.WriteLine("Test 11: Navigate to profile passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 11: Navigate to profile failed");
+            }
+
+
+            bool profile02 = SiteTest.Profile02(driver);
+            //Thread.Sleep(10000);
+
+            if (profile02)
+            {
+                Console.WriteLine("Test 12: Navigate to trending profile passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 12: Navigate to trending profile failed");
+            }
+
+            bool BrokenNav = SiteTest.BorkenProfile(driver);
+            if (BrokenNav)
+            {
+                Console.WriteLine("Test 13: Successfully broke the profile page");
+            } else
+            {
+                Console.WriteLine("Test 13: Did not break the profile page");
+            }
+
+            bool post01 = SiteTest.Post01(driver);
+            if (post01)
+            {
+                Console.WriteLine("Test 14: Successfully posted tweet with valid entry");
+            } else
+            {
+                Console.WriteLine("Test 14: Did not posted tweet with valid entry");
+            }
+
+            bool post02 = SiteTest.Post02(driver);
+            if (post02)
+            {
+                Console.WriteLine("Test 15: Sent tweet with empty entry passed");
+            } else
+            {
+                Console.WriteLine("Test 15: Sent tweet with empty entry failed");
+            }
+
+            bool post03 = SiteTest.Post03(driver);
+            if (post03)
+            {
+                Console.WriteLine("Test 16: Sent tweet with special characters passed");
+            } else
+            {
+                Console.WriteLine("Test 16: Sent tweet with special characters failed");
+            }
+
+
+
+
+
+
+
+
+
+
+            Thread.Sleep(10000);
             driver.Quit();
         }
     }

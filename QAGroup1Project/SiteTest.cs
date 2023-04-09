@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using MySql.Data.MySqlClient;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
-using Bogus;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace QAGroup1Project
 {
@@ -68,6 +59,7 @@ namespace QAGroup1Project
             //load login page
             firstPage(driver, "nick", "asdf");
             //get the search box
+
             IWebElement searchButton = SiteWebElement.searchButton(driver);
             searchButton.Click();
             //wait for the link to change
@@ -96,8 +88,8 @@ namespace QAGroup1Project
                 searchBox.Click();
                 searchBox.SendKeys("kevin");
                 searchButton.Click();
-                
-                if(driver.Url.Contains("http://10.157.123.12/site1/search.php?text=kevin"))
+
+                if (driver.Url.Contains("http://10.157.123.12/site1/search.php?text=kevin"))
                 {
                     return true;
                 }
@@ -167,9 +159,9 @@ namespace QAGroup1Project
                         return false;
                     }
                 }
-                else 
-                { 
-                    return false; 
+                else
+                {
+                    return false;
                 }
             }
 
@@ -248,6 +240,203 @@ namespace QAGroup1Project
 
             IWebElement logoutLink = driver.FindElement(By.LinkText("Logout"));
             logoutLink.Click();
+        }
+
+
+
+        // nahum
+        public static bool BorkenProfile(IWebDriver driver)
+        {
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/userpage.php";
+
+                return true;
+            } catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+
+
+        public static bool Profile01(IWebDriver driver)
+        {// navigate to profile
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+
+                IWebElement profileTag = SiteWebElement.ProfileFinder(driver);
+                profileTag.Click();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool Profile02(IWebDriver driver)
+        {// navigate to top trending
+            // this one doesnt work like it should - i need to rework th structure of TopTrending to find the right link because too many things have the class bold
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+
+                IWebElement profileTag = SiteWebElement.ProfileFinder(driver);
+                profileTag.Click();
+
+                IWebElement trendingProfile = SiteWebElement.TopTrending(driver);
+                trendingProfile.Click();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool TestMessage01(IWebDriver driver)
+        {// valid data
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/DirectMessage.php";
+
+                IWebElement msgbox = SiteWebElement.Message(driver);
+                msgbox.SendKeys("Valid Message Data");
+
+                IWebElement subbtn = SiteWebElement.SubBtn(driver);
+                subbtn.Click();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool TestMessage02(IWebDriver driver)
+        {// empty data
+            try
+            {
+
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/DirectMessage.php";
+
+                IWebElement msgbox = SiteWebElement.Message(driver);
+                msgbox.SendKeys("");
+
+                IWebElement subbtn = SiteWebElement.SubBtn(driver);
+                subbtn.Click();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool TestMessage03(IWebDriver driver)
+        {// special character
+            try
+            {
+
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/DirectMessage.php";
+
+                IWebElement msgbox = SiteWebElement.Message(driver);
+                msgbox.SendKeys("!@#$%^&*?");
+
+                IWebElement subbtn = SiteWebElement.SubBtn(driver);
+                subbtn.Click();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool Post01(IWebDriver driver)
+        {// valid entry
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement createTweet = SiteWebElement.TextArea(driver);
+                createTweet.SendKeys("Is this thing on?");
+
+                IWebElement btnTweet = SiteWebElement.btnTweet(driver);
+                btnTweet.Click();
+
+                return true;
+            } catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool Post02(IWebDriver driver)
+        { // empty entry
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement createTweet = SiteWebElement.TextArea(driver);
+                createTweet.SendKeys("");
+
+                IWebElement btnTweet = SiteWebElement.btnTweet(driver);
+                btnTweet.Click();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                return false;
+            }
+        }
+
+        public static bool Post03(IWebDriver driver)
+        {// 'special' characters
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement createTweet = SiteWebElement.TextArea(driver);
+                createTweet.SendKeys("!@#$%^&*()-_+=}{[]");
+
+                IWebElement btnTweet = SiteWebElement.btnTweet(driver);
+                btnTweet.Click();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // how tf does this fail
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
     }
 }
