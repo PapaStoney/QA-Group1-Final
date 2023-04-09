@@ -15,16 +15,16 @@ namespace QAGroup1Project
     internal class SiteTest
     {// in here goes each individual test's code
 
-        import org.openqa.selenium.support.ui.Select;
         //CONNOR'S BLOCK
         //SIGNUP TEST
         public static void SignUp(IWebDriver driver, string firstname, string lastname, string email, string screenname, string password, string confirmpassword, string phonenumber, string address, string postalcode, string url, string description, string location)
         {//in here goes the code for the clickies and sendkeys
 
             //load login page
-            driver.Url = ("http://10.157.123.12/site1/signup.php"); //MAKE SURE YOU'RE LOGGED INTO FORTICLIENT
+            driver.Url = ("http://10.157.123.12/site1/"); //MAKE SURE YOU'RE LOGGED INTO FORTICLIENT
 
             //get elements for the page
+            IWebElement clnkClickHere = SiteWebElement.clnkClickHere(driver);
             IWebElement ctxtFirstName = SiteWebElement.ctxtFirstName(driver);
             IWebElement ctxtLastName = SiteWebElement.ctxtLastName(driver);
             IWebElement ctxtEmail = SiteWebElement.ctxtEmail(driver);
@@ -38,8 +38,10 @@ namespace QAGroup1Project
             IWebElement ctxtURL = SiteWebElement.ctxtURL(driver);
             IWebElement ctxtDescription = SiteWebElement.ctxtDescription(driver);
             IWebElement ctxtLocation = SiteWebElement.ctxtLocation(driver);
+            IWebElement cbtnSubmit = SiteWebElement.cbtnSubmit(driver);
 
             //what gets typed, what gets clicked
+            clnkClickHere.Click();
             ctxtFirstName.SendKeys(firstname);
             ctxtLastName.SendKeys(lastname);
             ctxtEmail.SendKeys(email);
@@ -51,18 +53,31 @@ namespace QAGroup1Project
 
             //select province
             cdrpProvince.Click();
-            cdrpProvince.selectByIndex("ANTARCTICA");
+            //cdrpProvince.selectByIndex("ANTARCTICA");
 
             ctxtPostalCode.SendKeys(postalcode);
             ctxtURL.SendKeys(url);
             ctxtDescription.SendKeys(description);
             ctxtLocation.SendKeys(location);
+            
 
         }
 
-        public static bool SignUp01(IWebDriver driver)
+        public static bool TestSignUp01(IWebDriver driver)
         {
             SignUp(driver, "Okabe", "Rintaro", "hhk@secretgadgetlabs.jp", "HouuinKiyoma", "ineedtherapyafterthis", "ineedtherapyafterthis", "555-555-555", "123 Any Street, Sendai, Izumi-ko, Japan", "C1A-1V7", "TheOraganizationIsWatching", "I'm something of a mad scientist myself", "Sendai, Japan");
+
+            if (driver.Url == "http://10.157.123.12/site1/login.php")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+
         }
 
 

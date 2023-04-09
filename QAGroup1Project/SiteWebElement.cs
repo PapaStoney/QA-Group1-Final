@@ -34,6 +34,11 @@ namespace QAGroup1Project
 
         //CONNOR'S BLOCK
         //SIGNUP TEST
+        public static IWebElement clnkClickHere(IWebDriver driver)
+        {
+            IWebElement clnkClickHere = driver.FindElement(By.LinkText("Click Here"));
+            return clnkClickHere;
+        }
         public static IWebElement ctxtFirstName(IWebDriver driver)
         {
             IWebElement ctxtFirstName = driver.FindElement(By.Id("firstname"));
@@ -98,6 +103,11 @@ namespace QAGroup1Project
         {
             IWebElement ctxtLocation = driver.FindElement(By.Id("location"));
             return ctxtLocation;
+        }
+        public static IWebElement cbtnSubmit(IWebDriver driver)
+        {
+            IWebElement cbtnSubmit = driver.FindElement(By.Id("button"));
+            return cbtnSubmit;
         }
 
     }
