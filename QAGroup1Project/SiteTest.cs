@@ -460,14 +460,14 @@ namespace QAGroup1Project
         {
             try
             {
-                logOut(driver);
-                firstPage(driver, "nick", "asdf");
+
+
                 driver.Url = "http://10.157.123.12/site1/index.php";
 
-                IWebElement moments = driver.FindElement(By.LinkText("Moments"));
+                IWebElement moments = SiteWebElement.Moments(driver);
 
                 moments.Click();
-                if(driver.Url.Contains("http://10.157.123.12/site4/index.php#"))
+                if(driver.Url.Contains("http://10.157.123.12/site1/index.php#"))
                 {
                     return true;
                 }
@@ -487,14 +487,13 @@ namespace QAGroup1Project
         {
             try
             {
-                logOut(driver);
-                firstPage(driver, "nick", "asdf");
+
                 driver.Url = "http://10.157.123.12/site1/index.php";
 
-                IWebElement notification = driver.FindElement(By.LinkText("Notifications"));
+                IWebElement notification = SiteWebElement.Notifications(driver);
 
                 notification.Click();
-                if (driver.Url.Contains("http://10.157.123.12/site4/Notifications.php"))
+                if (driver.Url.Contains("http://10.157.123.12/site1/Notifications.php"))
                 {
                     return true;
                 }
@@ -515,14 +514,14 @@ namespace QAGroup1Project
         {
             try
             {
-                logOut(driver);
-                firstPage(driver, "nick", "asdf");
+
+
                 driver.Url = "http://10.157.123.12/site1/index.php";
 
-                IWebElement message = driver.FindElement(By.LinkText("Messages"));
+                IWebElement message = SiteWebElement.Messages(driver);
 
                 message.Click();
-                if (driver.Url.Contains("http://10.157.123.12/site4/DirectMessage.php"))
+                if (driver.Url.Contains("http://10.157.123.12/site1/DirectMessage.php"))
                 {
                     return true;
                 }
@@ -543,14 +542,14 @@ namespace QAGroup1Project
         {
             try
             {
-                logOut(driver);
-                firstPage(driver, "nick", "asdf");
+
+
                 driver.Url = "http://10.157.123.12/site1/index.php";
 
-                IWebElement logo = driver.FindElement(By.ClassName("navbar-brand"));
+                IWebElement logo = SiteWebElement.Logo(driver);
 
                 logo.Click();
-                if(driver.Url.Contains("http://10.157.123.12/site4/index.php#"))
+                if(driver.Url.Contains("http://10.157.123.12/site1/index.php#"))
                 {
                     return true;
                 }
@@ -572,13 +571,13 @@ namespace QAGroup1Project
             try
             {
                 //Go to Page
-                driver.Url = ("http://10.157.123.12/site4/login.php");
+                driver.Url = ("http://10.157.123.12/site1/login.php");
 
                 //find element and click
-                IWebElement contactUs = driver.FindElement(By.LinkText("Contact Us"));
+                IWebElement contactUs = SiteWebElement.ContactUs(driver);
                 //click it
                 contactUs.Click();
-                if (driver.Url.Contains("http://10.157.123.12/site4/ContactUs.php"))
+                if (driver.Url.Contains("http://10.157.123.12/site1/ContactUs.php"))
                 {
                     return true;
                 }
@@ -600,10 +599,10 @@ namespace QAGroup1Project
             try
             {
                 //Go to Page
-                driver.Url = ("http://10.157.123.12/site4/ContactUs.php");
+                driver.Url = ("http://10.157.123.12/site1/ContactUs.php");
 
                 //find element and click
-                IWebElement contactUsEmail = driver.FindElement(By.LinkText("realemail@yahoo.ca"));
+                IWebElement contactUsEmail = SiteWebElement.Email(driver);
 
                 //click it
                 contactUsEmail.Click();

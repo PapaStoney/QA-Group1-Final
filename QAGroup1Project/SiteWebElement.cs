@@ -130,11 +130,11 @@ namespace QAGroup1Project
         //Anthony Moments click
         public static IWebElement Moments(IWebDriver driver)
         {
-            IWebElement moments = driver.FindElement(By.LinkText("Moments"));
+            IWebElement moments = driver.FindElement(By.LinkText("Moments"));//driver.FindElement(By.LinkText("Moments"));
             return moments;
         }
 
-        //ANthony Notifications click
+        //Anthony Notifications click
         public static IWebElement Notifications(IWebDriver driver)
         {
             IWebElement notifications = driver.FindElement(By.LinkText("Notifications"));
@@ -151,7 +151,7 @@ namespace QAGroup1Project
         //Anthony Logo Click
         public static IWebElement Logo(IWebDriver driver)
         {
-            IWebElement logo = driver.FindElement(By.LinkText("Logo"));
+            IWebElement logo = driver.FindElement(By.CssSelector("li > a.navbar-brand > img.logo"));
             return logo;
         }
 
