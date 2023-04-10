@@ -187,9 +187,69 @@ namespace QAGroup1Project
             {
                 Console.WriteLine("Test 16: Sent tweet with special characters failed");
             }
+            //Anthony Moments
+            bool moments01 = SiteTest.Moments01(driver);
+            if (moments01)
+            {
+                Console.WriteLine("Test 17: Moments click success");
+            }
+            else
+            {
+                Console.WriteLine("Test 17: Moments click failed");
+            }
+            //Anthony Notifications Click 
+            bool notifications01 = SiteTest.Notifications01(driver);
+            if (notifications01)
+            {
+                Console.WriteLine("Test 18: Notifications click success");
+            }
+            else
+            {
+                Console.WriteLine("Test 18: Notifications click failed");
+            }
 
+            //Anthong Messages Click
+            bool messages01 = SiteTest.Messages01(driver);
+            if (messages01)
+            {
+                Console.WriteLine("Test 19: Messages click success");
+            }
+            else
+            {
+                Console.WriteLine("Test 19: Messages click failed");
+            }
 
+            //Anthony Logo Click 
+            bool logo01 = SiteTest.Logo01(driver);
+            if (logo01)
+            {
+                Console.WriteLine("Test 20: Logo click success");
+            }
+            else
+            {
+                Console.WriteLine("Test 20: Logo click failed");
+            }
 
+            //Anthony Contact Us Test
+            bool contactUs01 = SiteTest.ContactUs01(driver);
+            if (contactUs01)
+            {
+                Console.WriteLine("Test 17: Contact Us click success");
+            }
+            else
+            {
+                Console.WriteLine("Test 17: Contact Us with valid data failed");
+            }
+            //Anthony Contactus Email
+            bool contactUs02 = SiteTest.ContactUs02(driver);
+            if (contactUs02)
+            {
+                Console.WriteLine("Test 18:Real email sent");
+            }
+            else
+            {
+                Console.WriteLine("Test 18: realemail failed");
+            }
 
 
 

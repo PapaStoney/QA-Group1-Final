@@ -126,5 +126,48 @@ namespace QAGroup1Project
             IWebElement btnTweet = driver.FindElement(By.Name("btnTweet"));
             return btnTweet;
         }
+
+        //Anthony Moments click
+        public static IWebElement Moments(IWebDriver driver)
+        {
+            IWebElement moments = driver.FindElement(By.LinkText("Moments"));
+            return moments;
+        }
+
+        //ANthony Notifications click
+        public static IWebElement Notifications(IWebDriver driver)
+        {
+            IWebElement notifications = driver.FindElement(By.LinkText("Notifications"));
+            return notifications;
+        }
+
+        //Anthony Messages click
+        public static IWebElement Messages(IWebDriver driver)
+        {
+            IWebElement messages = driver.FindElement(By.LinkText("Messages"));
+            return messages;
+        }
+
+        //Anthony Logo Click
+        public static IWebElement Logo(IWebDriver driver)
+        {
+            IWebElement logo = driver.FindElement(By.LinkText("Logo"));
+            return logo;
+        }
+
+        //Anthony - Contact Us click 
+        public static IWebElement ContactUs(IWebDriver driver)
+        {
+            IWebElement contactUs = driver.FindElement(By.LinkText("Contact Us"));
+            return contactUs;
+
+        }
+        //Anthony Contact Us - Email
+        public static IWebElement Email(IWebDriver driver)
+        {
+            IWebElement email = driver.FindElement(By.LinkText("realemail@yahoo.ca"));
+            return email;
+        }
+
     }
 }

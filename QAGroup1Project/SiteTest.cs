@@ -269,7 +269,8 @@ namespace QAGroup1Project
                 driver.Url = "http://10.157.123.12/site1/userpage.php";
 
                 return true;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -400,7 +401,8 @@ namespace QAGroup1Project
                 btnTweet.Click();
 
                 return true;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -450,6 +452,176 @@ namespace QAGroup1Project
             {
                 // how tf does this fail
                 Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        //Anthony Moments Button Click
+        public static bool Moments01(IWebDriver driver)
+        {
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement moments = driver.FindElement(By.LinkText("Moments"));
+
+                moments.Click();
+                if(driver.Url.Contains("http://10.157.123.12/site4/index.php#"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+        //Anthony Notifications  Click
+        public static bool Notifications01(IWebDriver driver)
+        {
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement notification = driver.FindElement(By.LinkText("Notifications"));
+
+                notification.Click();
+                if (driver.Url.Contains("http://10.157.123.12/site4/Notifications.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        //Anthony Messages Click
+        public static bool Messages01(IWebDriver driver)
+        {
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement message = driver.FindElement(By.LinkText("Messages"));
+
+                message.Click();
+                if (driver.Url.Contains("http://10.157.123.12/site4/DirectMessage.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        //Anthony Logo Click
+        public static bool Logo01(IWebDriver driver)
+        {
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "nick", "asdf");
+                driver.Url = "http://10.157.123.12/site1/index.php";
+
+                IWebElement logo = driver.FindElement(By.ClassName("navbar-brand"));
+
+                logo.Click();
+                if(driver.Url.Contains("http://10.157.123.12/site4/index.php#"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false; 
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        //Anthony- Test Contact Us Click
+        public static bool ContactUs01(IWebDriver driver)
+        {
+            try
+            {
+                //Go to Page
+                driver.Url = ("http://10.157.123.12/site4/login.php");
+
+                //find element and click
+                IWebElement contactUs = driver.FindElement(By.LinkText("Contact Us"));
+                //click it
+                contactUs.Click();
+                if (driver.Url.Contains("http://10.157.123.12/site4/ContactUs.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        //Anthony Contact Us RealEmail Click
+        public static bool ContactUs02(IWebDriver driver)
+        {
+            try
+            {
+                //Go to Page
+                driver.Url = ("http://10.157.123.12/site4/ContactUs.php");
+
+                //find element and click
+                IWebElement contactUsEmail = driver.FindElement(By.LinkText("realemail@yahoo.ca"));
+
+                //click it
+                contactUsEmail.Click();
+
+                //wait for new window to pop 
+                System.Threading.Thread.Sleep(5000);
+                
+                if (driver.Url.Contains("mailto:"))//Launches Email Application not sure where to go with that atm 
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
                 return false;
             }
         }
