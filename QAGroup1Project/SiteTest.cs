@@ -624,5 +624,41 @@ namespace QAGroup1Project
                 return false;
             }
         }
+        //Anthony Tweet as new user
+        public static bool TweetNewUser(IWebDriver driver)
+        {
+            try
+            {
+                logOut(driver);
+                firstPage(driver, "jxlie", "julie123");
+
+                IWebElement tweet = SiteWebElement.TextArea(driver);
+                IWebElement click = SiteWebElement.btnTweet(driver);
+
+                tweet.Click();
+                if (driver.Url.Contains("http://10.157.123.12/site1/index.php"))
+                {                    
+                    tweet.Click();
+                    tweet.SendKeys("hello world");
+                    click.Click();
+                    if (driver.Url.Contains("http://10.157.123.12/site1/index.php"))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -168,6 +168,7 @@ namespace QAGroup1Project
             IWebElement email = driver.FindElement(By.LinkText("realemail@yahoo.ca"));
             return email;
         }
-
+        //Anthony Tweet as new user
+        
     }
 }

@@ -234,21 +234,31 @@ namespace QAGroup1Project
             bool contactUs01 = SiteTest.ContactUs01(driver);
             if (contactUs01)
             {
-                Console.WriteLine("Test 17: Contact Us click success");
+                Console.WriteLine("Test 21: Contact Us click success");
             }
             else
             {
-                Console.WriteLine("Test 17: Contact Us with valid data failed");
+                Console.WriteLine("Test 21: Contact Us with valid data failed");
             }
             //Anthony Contactus Email
             bool contactUs02 = SiteTest.ContactUs02(driver);
             if (contactUs02)
             {
-                Console.WriteLine("Test 18:Real email sent");
+                Console.WriteLine("Test 22:Real email sent");
             }
             else
             {
-                Console.WriteLine("Test 18: realemail failed");
+                Console.WriteLine("Test 22: realemail failed");
+            }
+            //Anthony Tweet as new user
+            bool tweetAsNewUser01 = SiteTest.TweetNewUser(driver);
+            if (tweetAsNewUser01)
+            {
+                Console.WriteLine("Test 23: Tweet as new user success");
+            }
+            else
+            {
+                Console.WriteLine("Test 23: Tweet as new user failed");
             }
 
 
