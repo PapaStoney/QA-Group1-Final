@@ -104,39 +104,39 @@ namespace QAGroup1Project
             bool testMessage01 = SiteTest.TestMessage01(driver);
             if (testMessage01)
             {
-                Console.WriteLine("Test 8: Message with valid data passed");
+                Console.WriteLine("Test 9: Message with valid data passed");
             } else
             {
-                Console.WriteLine("Test 8: Message with valid data failed");
+                Console.WriteLine("Test 9: Message with valid data failed");
             }
 
             bool testMessage02 = SiteTest.TestMessage02(driver);
             if (testMessage02) 
             {
-                Console.WriteLine("Test 9: Message with empty data passed");
+                Console.WriteLine("Test 10: Message with empty data passed");
             }
             else
             {
-                Console.WriteLine("Test 9: Message with empty data failed");
+                Console.WriteLine("Test 10: Message with empty data failed");
             }
 
             bool testMessage03 = SiteTest.TestMessage03(driver);
             if (testMessage03)
             {
-                Console.WriteLine("Test 10: Message with no data passed");
+                Console.WriteLine("Test 11: Message with no data passed");
             } else
             {
-                Console.WriteLine("Test 10: Message with no data failed");
+                Console.WriteLine("Test 11: Message with no data failed");
             }
 
             bool profile01 = SiteTest.Profile01(driver);
             if (profile01)
             {
-                Console.WriteLine("Test 11: Navigate to profile passed");
+                Console.WriteLine("Test 12: Navigate to profile passed");
             }
             else
             {
-                Console.WriteLine("Test 11: Navigate to profile failed");
+                Console.WriteLine("Test 12: Navigate to profile failed");
             }
 
 
@@ -145,120 +145,120 @@ namespace QAGroup1Project
 
             if (profile02)
             {
-                Console.WriteLine("Test 12: Navigate to trending profile passed");
+                Console.WriteLine("Test 13: Navigate to trending profile passed");
             }
             else
             {
-                Console.WriteLine("Test 12: Navigate to trending profile failed");
+                Console.WriteLine("Test 13: Navigate to trending profile failed");
             }
 
             bool BrokenNav = SiteTest.BorkenProfile(driver);
             if (BrokenNav)
             {
-                Console.WriteLine("Test 13: Successfully broke the profile page");
+                Console.WriteLine("Test 14: Successfully broke the profile page");
             } else
             {
-                Console.WriteLine("Test 13: Did not break the profile page");
+                Console.WriteLine("Test 14: Did not break the profile page");
             }
 
             bool post01 = SiteTest.Post01(driver);
             if (post01)
             {
-                Console.WriteLine("Test 14: Successfully posted tweet with valid entry");
+                Console.WriteLine("Test 15: Successfully posted tweet with valid entry");
             } else
             {
-                Console.WriteLine("Test 14: Did not posted tweet with valid entry");
+                Console.WriteLine("Test 15: Did not posted tweet with valid entry");
             }
 
             bool post02 = SiteTest.Post02(driver);
             if (post02)
             {
-                Console.WriteLine("Test 15: Sent tweet with empty entry passed");
+                Console.WriteLine("Test 16: Sent tweet with empty entry passed");
             } else
             {
-                Console.WriteLine("Test 15: Sent tweet with empty entry failed");
+                Console.WriteLine("Test 16: Sent tweet with empty entry failed");
             }
 
             bool post03 = SiteTest.Post03(driver);
             if (post03)
             {
-                Console.WriteLine("Test 16: Sent tweet with special characters passed");
+                Console.WriteLine("Test 17: Sent tweet with special characters passed");
             } else
             {
-                Console.WriteLine("Test 16: Sent tweet with special characters failed");
+                Console.WriteLine("Test 17: Sent tweet with special characters failed");
             }
             //Anthony Moments
             bool moments01 = SiteTest.Moments01(driver);
             if (moments01)
             {
-                Console.WriteLine("Test 17: Moments click success");
+                Console.WriteLine("Test 18: Moments click success");
             }
             else
             {
-                Console.WriteLine("Test 17: Moments click failed");
+                Console.WriteLine("Test 18: Moments click failed");
             }
             //Anthony Notifications Click 
             bool notifications01 = SiteTest.Notifications01(driver);
             if (notifications01)
             {
-                Console.WriteLine("Test 18: Notifications click success");
+                Console.WriteLine("Test 19: Notifications click success");
             }
             else
             {
-                Console.WriteLine("Test 18: Notifications click failed");
+                Console.WriteLine("Test 19: Notifications click failed");
             }
 
             //Anthong Messages Click
             bool messages01 = SiteTest.Messages01(driver);
             if (messages01)
             {
-                Console.WriteLine("Test 19: Messages click success");
+                Console.WriteLine("Test 20: Messages click success");
             }
             else
             {
-                Console.WriteLine("Test 19: Messages click failed");
+                Console.WriteLine("Test 20: Messages click failed");
             }
 
             //Anthony Logo Click 
             bool logo01 = SiteTest.Logo01(driver);
             if (logo01)
             {
-                Console.WriteLine("Test 20: Logo click success");
+                Console.WriteLine("Test 21: Logo click success");
             }
             else
             {
-                Console.WriteLine("Test 20: Logo click failed");
+                Console.WriteLine("Test 21: Logo click failed");
             }
 
             //Anthony Contact Us Test
             bool contactUs01 = SiteTest.ContactUs01(driver);
             if (contactUs01)
             {
-                Console.WriteLine("Test 21: Contact Us click success");
+                Console.WriteLine("Test 22: Contact Us click success");
             }
             else
             {
-                Console.WriteLine("Test 21: Contact Us with valid data failed");
+                Console.WriteLine("Test 22: Contact Us with valid data failed");
             }
             //Anthony Contactus Email
             bool contactUs02 = SiteTest.ContactUs02(driver);
             if (contactUs02)
             {
-                Console.WriteLine("Test 22:Real email sent");
+                Console.WriteLine("Test 23:Real email sent");
             }
             else
             {
-                Console.WriteLine("Test 22: realemail failed");
+                Console.WriteLine("Test 23: realemail failed");
             }
             //Anthony Tweet as new user
             bool tweetAsNewUser01 = SiteTest.TweetNewUser(driver);
             if (tweetAsNewUser01)
             {
-                Console.WriteLine("Test 23: Tweet as new user success");
+                Console.WriteLine("Test 24: Tweet as new user success");
             }
             else
             {
-                Console.WriteLine("Test 23: Tweet as new user failed");
+                Console.WriteLine("Test 24: Tweet as new user failed");
             }
 
 
