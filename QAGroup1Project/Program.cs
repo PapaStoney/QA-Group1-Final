@@ -238,7 +238,7 @@ namespace QAGroup1Project
             }
             else
             {
-                Console.WriteLine("Test 22: Contact Us with valid data failed");
+                Console.WriteLine("Test 22: Contact Us click failed");
             }
             //Anthony Contactus Email
             bool contactUs02 = SiteTest.ContactUs02(driver);

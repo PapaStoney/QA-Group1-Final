@@ -165,7 +165,7 @@ namespace QAGroup1Project
         //Anthony Contact Us - Email
         public static IWebElement Email(IWebDriver driver)
         {
-            IWebElement email = driver.FindElement(By.LinkText("realemail@yahoo.ca"));
+            IWebElement email = driver.FindElement(By.LinkText("realemail@gmail.ca"));
             return email;
         }
         //Anthony Tweet as new user Uses existing methods 

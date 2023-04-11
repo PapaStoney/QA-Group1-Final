@@ -493,7 +493,7 @@ namespace QAGroup1Project
                 IWebElement notification = SiteWebElement.Notifications(driver);
 
                 notification.Click();
-                if (driver.Url.Contains("http://10.157.123.12/site1/Notifications.php"))
+                if (driver.Url.Contains("http://10.157.123.12/site1/notifications.php"))
                 {
                     return true;
                 }
@@ -549,7 +549,7 @@ namespace QAGroup1Project
                 IWebElement logo = SiteWebElement.Logo(driver);
 
                 logo.Click();
-                if(driver.Url.Contains("http://10.157.123.12/site1/index.php#"))
+                if(driver.Url.Contains("http://10.157.123.12/site1/index.php"))
                 {
                     return true;
                 }
@@ -577,7 +577,7 @@ namespace QAGroup1Project
                 IWebElement contactUs = SiteWebElement.ContactUs(driver);
                 //click it
                 contactUs.Click();
-                if (driver.Url.Contains("http://10.157.123.12/site1/ContactUs.php"))
+                if (driver.Url.Contains("http://10.157.123.12/site1/contactus"))
                 {
                     return true;
                 }
