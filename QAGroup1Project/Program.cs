@@ -9,15 +9,18 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using Bogus;
+using System.Drawing.Text;
 
 namespace QAGroup1Project
 {
     internal class Program
     {
-
+        
+        private static MySqlConnection connection;
         static void Main(string[] args)
         {// in here goes the code that will run the tests
-
+            SiteReset();
+            
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
             driver.Manage().Window.Maximize();
 
@@ -262,13 +265,22 @@ namespace QAGroup1Project
             }
 
 
-
-
-
-
-
             Thread.Sleep(10000);
             driver.Quit();
+        }
+        public static void SiteReset()
+        {
+            // You'll need to modify the database, uid, and pwd fields of myConnectionString to use your own database.
+            string myConnectionString = "server=remote.faedine.com;database=bitter-site1;uid=site1;pwd=ASMfoo34b3CdZoss;";
+            connection = new MySqlConnection(myConnectionString);
+            MySqlCommand command = new MySqlCommand();
+
+            command.Connection = connection;
+            command.CommandText = "reset";
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }

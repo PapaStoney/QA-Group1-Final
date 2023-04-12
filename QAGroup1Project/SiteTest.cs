@@ -5,8 +5,8 @@ using System;
 namespace QAGroup1Project
 {
     internal class SiteTest
-    {// in here goes each individual test's code
-        //JULIE
+    {
+        //julie
         public static bool TestLogin01(IWebDriver driver)
         {
             try
@@ -33,7 +33,7 @@ namespace QAGroup1Project
         }
 
         public static bool TestLogin02(IWebDriver driver)
-        {
+        { //julie
             try
             {
                 firstPage(driver, "julie", "julie1234");
@@ -56,7 +56,7 @@ namespace QAGroup1Project
         }
 
         public static bool TestLogout01(IWebDriver driver)
-        {
+        { //julie
             firstPage(driver, "nick", "asdf");
             logOut(driver);
 
@@ -70,7 +70,7 @@ namespace QAGroup1Project
             }
         }
         public static bool TestSearch01(IWebDriver driver)
-        {
+        { //julie
             //load login page
             firstPage(driver, "nick", "asdf");
             //get the search box
@@ -91,7 +91,7 @@ namespace QAGroup1Project
         }
 
         public static bool TestSearch02(IWebDriver driver)
-        {
+        { //julie
             try
             {
                 logOut(driver);
@@ -120,7 +120,7 @@ namespace QAGroup1Project
         }
 
         public static bool TestNav01(IWebDriver driver)
-        {
+        { //julie
             try
             {
                 logOut(driver);
@@ -149,7 +149,7 @@ namespace QAGroup1Project
         }
 
         public static bool TestTweet01(IWebDriver driver)
-        {
+        { //julie
             try
             {
                 logOut(driver);
@@ -188,7 +188,7 @@ namespace QAGroup1Project
         }
 
         public static bool TestTweet02(IWebDriver driver)
-        {
+        { //julie
             try
             {
                 logOut(driver);
@@ -227,7 +227,7 @@ namespace QAGroup1Project
 
 
         public static void firstPage(IWebDriver driver, String strName, string strPassword)
-        {//in here goes the code for the clickies and sendkeys
+        {//julie
             //load login page
             driver.Url = ("http://10.157.123.12/site1/login.php"); //MAKE SURE YOU'RE LOGGED INTO FORTICLIENT
 
