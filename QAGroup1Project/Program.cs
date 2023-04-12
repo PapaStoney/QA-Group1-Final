@@ -24,6 +24,16 @@ namespace QAGroup1Project
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
             driver.Manage().Window.Maximize();
 
+            bool SignUpTest01 = SiteTest.SignUp01(driver);
+            if (SignUpTest01)
+            {
+                Console.WriteLine("Test 24: Sign Up with valid data passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 24: Sign Up with valid data failed");
+            }
+            
             bool logintest01 = SiteTest.TestLogin01(driver);
             if(logintest01)
             {
