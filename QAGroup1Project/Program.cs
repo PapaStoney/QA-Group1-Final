@@ -278,19 +278,34 @@ namespace QAGroup1Project
             Thread.Sleep(10000);
             driver.Quit();
         }
+        // Resets the state of the bitter website.
+
         public static void SiteReset()
+
         {
+
             // You'll need to modify the database, uid, and pwd fields of myConnectionString to use your own database.
-            string myConnectionString = "server=remote.faedine.com;database=bitter-site1;uid=site1;pwd=ASMfoo34b3CdZoss;";
+
+            string myConnectionString = "server=10.157.123.12;database=bitter-site1;uid=site1;pwd=ASMfoo34b3CdZoss;";
+
             connection = new MySqlConnection(myConnectionString);
+
             MySqlCommand command = new MySqlCommand();
 
+
+
             command.Connection = connection;
+
             command.CommandText = "reset";
+
             command.CommandType = System.Data.CommandType.StoredProcedure;
+
             connection.Open();
+
             command.ExecuteNonQuery();
+
             connection.Close();
+
         }
     }
 }
