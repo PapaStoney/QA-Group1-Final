@@ -1,12 +1,13 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
 
 namespace QAGroup1Project
 {
     internal class SiteTest
     {
-        //connor 
+        //CONNOR BLOCK // SIGNUP TEST
         public static void SignUp(IWebDriver driver, string firstname, string lastname, string email, string screenname, string password, string confirmpassword, string phonenumber, string address, string postalcode, string url, string description, string location)
         {//in here goes the code for the clickies and sendkeys
 
@@ -14,7 +15,7 @@ namespace QAGroup1Project
             driver.Url = ("http://10.157.123.12/site1/signup.php"); //MAKE SURE YOU'RE LOGGED INTO FORTICLIENT
 
             //grab elements
-            IWebElement clnkClickHere = SiteWebElement.clnkClickHere(driver);
+            //IWebElement clnkClickHere = SiteWebElement.clnkClickHere(driver);
             IWebElement ctxtFirstName = SiteWebElement.ctxtFirstName(driver);
             IWebElement ctxtLastName = SiteWebElement.ctxtLastName(driver);
             IWebElement ctxtEmail = SiteWebElement.ctxtEmail(driver);
@@ -23,15 +24,20 @@ namespace QAGroup1Project
             IWebElement ctxtConfirmPassword = SiteWebElement.ctxtConfirmPassword(driver);
             IWebElement ctxtPhoneNumber = SiteWebElement.ctxtPhoneNumber(driver);
             IWebElement ctxtAddress = SiteWebElement.ctxtAddress(driver);
+            
             IWebElement cdrpProvince = SiteWebElement.cdrpProvince(driver);
+            IWebElement cdrpProvinceOption = SiteWebElement.cdrpProvinceOption(driver);
+
             IWebElement ctxtPostalCode = SiteWebElement.ctxtPostalCode(driver);
             IWebElement ctxtURL = SiteWebElement.ctxtURL(driver);
             IWebElement txtDescription = SiteWebElement.ctxtDescription(driver);
             IWebElement ctxtLocation = SiteWebElement.ctxtLocation(driver);
 
+            IWebElement clnkSubmit = SiteWebElement.clnkSubmit(driver);
+
             //what gets typed, what gets clicked
 
-            clnkClickHere.Click();
+            //clnkClickHere.Click();
 
             ctxtFirstName.SendKeys(firstname);
             ctxtLastName.SendKeys(lastname);
@@ -43,28 +49,232 @@ namespace QAGroup1Project
             ctxtAddress.SendKeys(address);
 
             cdrpProvince.Click();
+            cdrpProvinceOption.Click();
 
             ctxtPostalCode.SendKeys(postalcode);
             ctxtURL.SendKeys(url);
             txtDescription.SendKeys(description);
             ctxtLocation.SendKeys(location);
 
+            //click submit
+            clnkSubmit.Click();
+
         }
 
-        public static bool SignUp01(IWebDriver driver)
+        public static bool SignUp01(IWebDriver driver) //SIGNUP WITH VALID DATA
         {
-            SignUp(driver, "Okabe", "Rintaro", "hhk@secretgadgetlabs.jp", "HouuinKiyoma", "ineedtherapyafterthis", "ineedtherapyafterthis", "555-555-555", "123 Any Street, Sendai, Izumi-ko, Japan", "C1A-1V7", "TheOraganizationIsWatching", "I'm something of a mad scientist myself", "Sendai, Japan");
-
-            if (driver.Url.Contains("http://10.157.123.12/site1/login.php"))
+            try
             {
-                return true;
+                SignUp(driver, "Okabe", "Rintaro", "hhk@secretgadgetlabs.jp", "HouuinKiyoma", "ineedtherapyafterthis", "ineedtherapyafterthis", "555-555-5555", "123 Any Street, Sendai, Izumi-ko, Japan", "K0C0B6", "TheOraganizationIsWatching", "I'm something of a mad scientist myself", "Sendai, Japan");
+
+                if (driver.Url.Contains("Login.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool SignUp02(IWebDriver driver) //SIGNUP WITH INVALID EMAIL
+        {
+            try
+            {
+                SignUp(driver, "Okabe", "Rintaro", "hhksecretgadgetlabs.jp", "HouuinKiyoma", "ineedtherapyafterthis", "ineedtherapyafterthis", "555-555-5555", "123 Any Street, Sendai, Izumi-ko, Japan", "K0C0B6", "TheOraganizationIsWatching", "I'm something of a mad scientist myself", "Sendai, Japan");
+
+                if (!driver.Url.Contains("Login.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
             {
                 return false;
             }
 
         }
+        public static bool SignUp03(IWebDriver driver) //SIGNUP WITH INVALID PHONE
+        {
+            try
+            {
+                SignUp(driver, "Okabe", "Rintaro", "hhksecretgadgetlabs.jp", "HouuinKiyoma", "ineedtherapyafterthis", "ineedtherapyafterthis", "55555555", "123 Any Street, Sendai, Izumi-ko, Japan", "K0C0B6", "TheOraganizationIsWatching", "I'm something of a mad scientist myself", "Sendai, Japan");
+
+                if (!driver.Url.Contains("Login.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+        public static bool SignUp04(IWebDriver driver) //SIGNUP WITH INVALID POSTAL CODE
+        {
+            try
+            {
+                SignUp(driver, "Okabe", "Rintaro", "hhksecretgadgetlabs.jp", "HouuinKiyoma", "ineedtherapyafterthis", "ineedtherapyafterthis", "555-555-5555", "123 Any Street, Sendai, Izumi-ko, Japan", "K0C0B", "TheOraganizationIsWatching", "I'm something of a mad scientist myself", "Sendai, Japan");
+
+
+                if (!driver.Url.Contains("Login.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static void CreateUser(IWebDriver driver, string firstname, string lastname, string email, string screenname, string password, string confirmpassword, string phonenumber, string address, string postalcode, string url, string description, string location)
+        {//in here goes the code for the clickies and sendkeys
+
+            //load login page
+            driver.Url = ("http://10.157.123.12/site1/signup.php"); //MAKE SURE YOU'RE LOGGED INTO FORTICLIENT
+
+            //grab elements
+            //IWebElement clnkClickHere = SiteWebElement.clnkClickHere(driver);
+            IWebElement ctxtFirstName = SiteWebElement.ctxtFirstName(driver);
+            IWebElement ctxtLastName = SiteWebElement.ctxtLastName(driver);
+            IWebElement ctxtEmail = SiteWebElement.ctxtEmail(driver);
+            IWebElement ctxtScreenName = SiteWebElement.ctxtScreenName(driver);
+            IWebElement ctxtPassword = SiteWebElement.ctxtPassword(driver);
+            IWebElement ctxtConfirmPassword = SiteWebElement.ctxtConfirmPassword(driver);
+            IWebElement ctxtPhoneNumber = SiteWebElement.ctxtPhoneNumber(driver);
+            IWebElement ctxtAddress = SiteWebElement.ctxtAddress(driver);
+
+            IWebElement cdrpProvince = SiteWebElement.cdrpProvince(driver);
+            IWebElement cdrpProvinceOption2 = SiteWebElement.cdrpProvinceOption2(driver);
+
+            IWebElement ctxtPostalCode = SiteWebElement.ctxtPostalCode(driver);
+            IWebElement ctxtURL = SiteWebElement.ctxtURL(driver);
+            IWebElement txtDescription = SiteWebElement.ctxtDescription(driver);
+            IWebElement ctxtLocation = SiteWebElement.ctxtLocation(driver);
+
+            IWebElement clnkSubmit = SiteWebElement.clnkSubmit(driver);
+
+            //what gets typed, what gets clicked
+
+            //clnkClickHere.Click();
+
+            ctxtFirstName.SendKeys(firstname);
+            ctxtLastName.SendKeys(lastname);
+            ctxtEmail.SendKeys(email);
+            ctxtScreenName.SendKeys(screenname);
+            ctxtPassword.SendKeys(password);
+            ctxtConfirmPassword.SendKeys(confirmpassword);
+            ctxtPhoneNumber.SendKeys(phonenumber);
+            ctxtAddress.SendKeys(address);
+
+            cdrpProvince.Click();
+            cdrpProvinceOption2.Click();
+
+            ctxtPostalCode.SendKeys(postalcode);
+            ctxtURL.SendKeys(url);
+            txtDescription.SendKeys(description);
+            ctxtLocation.SendKeys(location);
+
+            //click submit
+            clnkSubmit.Click();
+
+        }
+        public static bool CreateUser01(IWebDriver driver) //SIGNUP WITH INVALID POSTAL CODE
+        {
+            try
+            {
+                CreateUser(driver, "Connor", "Macdonald", "fakename@email.com", "IAmButSloth", "helpmeimtrapped01", "helpmeimtrapped01", "555-555-9999", "123 Any Street, Charlottetown, PE", "C0B1M0", "IHaveFooledThem", "My word is not bird.", "Canada City");
+
+                firstPage(driver, "IAmButSloth", "helpmeimtrapped01");
+                
+                IList<IWebElement> jsbuttons = driver.FindElements(By.TagName("button"));
+
+                IWebElement buttonToClick = null;
+
+                //loop through all buttons in list
+                foreach (IWebElement jsbutton in jsbuttons)
+                {
+                    //show text of each button
+                    Console.WriteLine(jsbutton.Text);
+
+                    if (jsbutton.Text.Contains("OK"))
+                    {
+                        buttonToClick = jsbutton;
+                    }
+                    {
+                        buttonToClick = jsbutton;
+                    }
+                }
+
+                if (driver.Url.Contains("Login.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // HOMEPAGE
+        public static void Homepage(IWebDriver driver) //CLICK ON THE HOME BUTTON (image)
+        {
+            //driver.Url = ("http://10.157.123.12/site1/login.php");
+
+            IWebElement clnkHomeButton = SiteWebElement.clnkHomeButton(driver);
+            IWebElement clnkNickAccount = SiteWebElement.clnkNickAccount(driver);
+            
+
+            clnkNickAccount.Click();
+            clnkHomeButton.Click();
+  
+        }
+        public static bool Homepage01(IWebDriver driver) //CLICK ON THE HOME BUTTON
+        {
+            try
+            {
+                firstPage(driver, "nick", "asdf");
+                Homepage(driver);
+                
+
+                if (driver.Url.Contains("http://10.157.123.12/site1/index.php"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        //END CONNOR BLOCK
 
         //julie
         public static bool TestLogin01(IWebDriver driver)
@@ -284,7 +494,7 @@ namespace QAGroup1Project
             }
 
         }
-
+         
 
         public static void firstPage(IWebDriver driver, String strName, string strPassword)
         {//julie

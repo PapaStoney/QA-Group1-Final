@@ -17,23 +17,83 @@ namespace QAGroup1Project
     {
         
         private static MySqlConnection connection;
+        
         static void Main(string[] args)
         {// in here goes the code that will run the tests
-            SiteReset();
+            //SiteReset();
             
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
             driver.Manage().Window.Maximize();
 
+            
+            //CONNOR BLOCK // SIGNUP TEST
             bool SignUpTest01 = SiteTest.SignUp01(driver);
             if (SignUpTest01)
             {
-                Console.WriteLine("Test 24: Sign Up with valid data passed");
+                Console.WriteLine("Test 24: Pass - Sign Up with valid data passed");
             }
             else
             {
-                Console.WriteLine("Test 24: Sign Up with valid data failed");
+                Console.WriteLine("Test 24: Fail - Sign Up with valid data failed");
+            }
+            bool SignUpTest02 = SiteTest.SignUp02(driver);
+            if (SignUpTest02)
+            {
+                Console.WriteLine("Test 25: Pass - Sign Up with invalid email failed");
+            }
+            else
+            {
+                Console.WriteLine("Test 25: Fail - Sign Up with invalid email passed");
+            }
+            bool SignUpTest03 = SiteTest.SignUp03(driver);
+            if (SignUpTest03)
+            {
+                Console.WriteLine("Test 26: Pass - Sign Up with invalid phone failed");
+            }
+            else
+            {
+                Console.WriteLine("Test 26: Fail - Sign Up with invalid phone passed");
+            }
+            bool SignUpTest04 = SiteTest.SignUp04(driver);
+            if (SignUpTest04)
+            {
+                Console.WriteLine("Test 27: Pass - Sign Up with invalid postal code failed");
+            }
+            else
+            {
+                Console.WriteLine("Test 27: Fail - Sign Up with invalid postal code passed");
             }
             
+            
+            bool CreateUserTest01 = SiteTest.CreateUser01(driver);
+            Thread.Sleep(5000);
+            if (CreateUserTest01)
+            {
+                Console.WriteLine("Test 29: Pass - user created, logged in.");
+            }
+            else
+            {
+                Console.WriteLine("Test 29: Fail - user not created");
+            }
+            
+            
+            
+            bool HomepageTest01 = SiteTest.Homepage01(driver);
+            if (HomepageTest01)
+            {
+                Console.WriteLine("Test 28: Pass - Home button went back to index.php");
+            }
+            else
+            {
+                Console.WriteLine("Test 28: Fail - Home button stayed on page");
+            }
+            
+            
+            
+
+            //END CONNOR BLOCK
+
+
             bool logintest01 = SiteTest.TestLogin01(driver);
             if(logintest01)
             {
@@ -280,32 +340,32 @@ namespace QAGroup1Project
         }
         // Resets the state of the bitter website.
 
-        public static void SiteReset()
+        //public static void SiteReset()
 
-        {
+        //{
 
-            // You'll need to modify the database, uid, and pwd fields of myConnectionString to use your own database.
+        //    // You'll need to modify the database, uid, and pwd fields of myConnectionString to use your own database.
 
-            string myConnectionString = "server=10.157.123.12;database=bitter-site1;uid=site1;pwd=ASMfoo34b3CdZoss;";
+        //    string myConnectionString = "server=10.157.123.12;database=bitter-site1;uid=site1;pwd=ASMfoo34b3CdZoss;";
 
-            connection = new MySqlConnection(myConnectionString);
+        //    connection = new MySqlConnection(myConnectionString);
 
-            MySqlCommand command = new MySqlCommand();
+        //    MySqlCommand command = new MySqlCommand();
 
 
 
-            command.Connection = connection;
+        //    command.Connection = connection;
 
-            command.CommandText = "reset";
+        //    command.CommandText = "reset";
 
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+        //    command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            connection.Open();
+        //    connection.Open();
 
-            command.ExecuteNonQuery();
+        //    command.ExecuteNonQuery();
 
-            connection.Close();
+        //    connection.Close();
 
-        }
+        //}
     }
 }

@@ -16,11 +16,13 @@ namespace QAGroup1Project
     {// in here goes the element grabbing
 
         //SIGNUP TEST
-        public static IWebElement clnkClickHere(IWebDriver driver)
-        {
-            IWebElement clnkClickHere = driver.FindElement(By.LinkText("Click Here"));
-            return clnkClickHere;
-        }
+        //public static IWebElement clnkClickHere(IWebDriver driver)
+        //{
+        //    IWebElement clnkClickHere = driver.FindElement(By.LinkText("Click Here"));
+        //    return clnkClickHere;
+        //}
+
+        //CONNOR BLOCK
         public static IWebElement ctxtFirstName(IWebDriver driver)
         {
             IWebElement ctxtFirstName = driver.FindElement(By.Id("firstname"));
@@ -38,7 +40,7 @@ namespace QAGroup1Project
         }
         public static IWebElement ctxtScreenName(IWebDriver driver)
         {
-            IWebElement ctxtScreenName = driver.FindElement(By.Id("screenname"));
+            IWebElement ctxtScreenName = driver.FindElement(By.Id("username"));
             return ctxtScreenName;
         }
         public static IWebElement ctxtPassword(IWebDriver driver)
@@ -66,9 +68,19 @@ namespace QAGroup1Project
             IWebElement cdrpProvince = driver.FindElement(By.Id("province"));
             return cdrpProvince;
         }
+        public static IWebElement cdrpProvinceOption(IWebDriver driver)
+        {
+            IWebElement cdrpProvinceOption = driver.FindElement(By.XPath("//option[@value='ON']"));
+            return cdrpProvinceOption;
+        }
+        public static IWebElement cdrpProvinceOption2(IWebDriver driver)
+        {
+            IWebElement cdrpProvinceOption2 = driver.FindElement(By.XPath("//option[@value='PE']"));
+            return cdrpProvinceOption2;
+        }
         public static IWebElement ctxtPostalCode(IWebDriver driver)
         {
-            IWebElement ctxtPostalCode = driver.FindElement(By.Id("postalcode"));
+            IWebElement ctxtPostalCode = driver.FindElement(By.Id("postalCode"));
             return ctxtPostalCode;
         }
         public static IWebElement ctxtURL(IWebDriver driver)
@@ -86,6 +98,25 @@ namespace QAGroup1Project
             IWebElement ctxtLocation = driver.FindElement(By.Id("location"));
             return ctxtLocation;
         }
+        public static IWebElement clnkSubmit(IWebDriver driver)
+        {
+            IWebElement clnkSubmit = driver.FindElement(By.Id("button"));
+            return clnkSubmit;
+        }
+        public static IWebElement clnkHomeButton(IWebDriver driver)
+        {
+            IWebElement clnkHomeButton = driver.FindElement(By.XPath("/html/body/nav/div/ul/li[1]/a/text()"));
+            return clnkHomeButton;
+        }
+        public static IWebElement clnkNickAccount(IWebDriver driver)
+        {
+            IWebElement clnkNickAccount = driver.FindElement(By.LinkText("userpage.php?user_id=1025"));
+            return clnkNickAccount;
+        }
+
+        //END CONNOR BLOCK
+
+
         public static IWebElement SiteUsername(IWebDriver driver)
         {
             IWebElement txtName = driver.FindElement(By.Id("username"));
