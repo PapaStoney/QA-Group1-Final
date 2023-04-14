@@ -196,6 +196,12 @@ namespace QAGroup1Project
             clnkSubmit.Click();
 
         }
+
+        public static void signuppage(IWebDriver driver)
+        {
+            //load signup page
+            driver.Url = ("http://10.157.123.12/site1/signup.php");
+        }
         public static bool CreateUser01(IWebDriver driver) //SIGNUP WITH INVALID POSTAL CODE
         {
             try
@@ -203,25 +209,6 @@ namespace QAGroup1Project
                 CreateUser(driver, "Connor", "Macdonald", "fakename@email.com", "IAmButSloth", "helpmeimtrapped01", "helpmeimtrapped01", "555-555-9999", "123 Any Street, Charlottetown, PE", "C0B1M0", "IHaveFooledThem", "My word is not bird.", "Canada City");
 
                 firstPage(driver, "IAmButSloth", "helpmeimtrapped01");
-                
-                IList<IWebElement> jsbuttons = driver.FindElements(By.TagName("button"));
-
-                IWebElement buttonToClick = null;
-
-                //loop through all buttons in list
-                foreach (IWebElement jsbutton in jsbuttons)
-                {
-                    //show text of each button
-                    Console.WriteLine(jsbutton.Text);
-
-                    if (jsbutton.Text.Contains("OK"))
-                    {
-                        buttonToClick = jsbutton;
-                    }
-                    {
-                        buttonToClick = jsbutton;
-                    }
-                }
 
                 if (driver.Url.Contains("Login.php"))
                 {

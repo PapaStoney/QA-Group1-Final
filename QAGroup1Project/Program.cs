@@ -25,74 +25,6 @@ namespace QAGroup1Project
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
             driver.Manage().Window.Maximize();
 
-            
-            //CONNOR BLOCK // SIGNUP TEST
-            bool SignUpTest01 = SiteTest.SignUp01(driver);
-            if (SignUpTest01)
-            {
-                Console.WriteLine("Test 24: Pass - Sign Up with valid data passed");
-            }
-            else
-            {
-                Console.WriteLine("Test 24: Fail - Sign Up with valid data failed");
-            }
-            bool SignUpTest02 = SiteTest.SignUp02(driver);
-            if (SignUpTest02)
-            {
-                Console.WriteLine("Test 25: Pass - Sign Up with invalid email failed");
-            }
-            else
-            {
-                Console.WriteLine("Test 25: Fail - Sign Up with invalid email passed");
-            }
-            bool SignUpTest03 = SiteTest.SignUp03(driver);
-            if (SignUpTest03)
-            {
-                Console.WriteLine("Test 26: Pass - Sign Up with invalid phone failed");
-            }
-            else
-            {
-                Console.WriteLine("Test 26: Fail - Sign Up with invalid phone passed");
-            }
-            bool SignUpTest04 = SiteTest.SignUp04(driver);
-            if (SignUpTest04)
-            {
-                Console.WriteLine("Test 27: Pass - Sign Up with invalid postal code failed");
-            }
-            else
-            {
-                Console.WriteLine("Test 27: Fail - Sign Up with invalid postal code passed");
-            }
-            
-            
-            bool CreateUserTest01 = SiteTest.CreateUser01(driver);
-            Thread.Sleep(5000);
-            if (CreateUserTest01)
-            {
-                Console.WriteLine("Test 29: Pass - user created, logged in.");
-            }
-            else
-            {
-                Console.WriteLine("Test 29: Fail - user not created");
-            }
-            
-            
-            
-            bool HomepageTest01 = SiteTest.Homepage01(driver);
-            if (HomepageTest01)
-            {
-                Console.WriteLine("Test 28: Pass - Home button went back to index.php");
-            }
-            else
-            {
-                Console.WriteLine("Test 28: Fail - Home button stayed on page");
-            }
-            
-            
-            
-
-            //END CONNOR BLOCK
-
 
             bool logintest01 = SiteTest.TestLogin01(driver);
             if(logintest01)
@@ -333,6 +265,74 @@ namespace QAGroup1Project
             {
                 Console.WriteLine("Test 24: Tweet as new user failed");
             }
+
+            //CONNOR BLOCK // SIGNUP TEST
+            
+            SiteTest.signuppage(driver);
+            SiteTest.logOut(driver);
+            //Thread.Sleep(5000);
+
+            bool SignUpTest01 = SiteTest.SignUp01(driver);
+            if (SignUpTest01)
+            {
+                Console.WriteLine("Test 24: Pass - Sign Up with valid data passed");
+            }
+            else
+            {
+                Console.WriteLine("Test 24: Fail - Sign Up with valid data failed");
+            }
+            bool SignUpTest02 = SiteTest.SignUp02(driver);
+            if (SignUpTest02)
+            {
+                Console.WriteLine("Test 25: Pass - Sign Up with invalid email failed");
+            }
+            else
+            {
+                Console.WriteLine("Test 25: Fail - Sign Up with invalid email passed");
+            }
+            bool SignUpTest03 = SiteTest.SignUp03(driver);
+            if (SignUpTest03)
+            {
+                Console.WriteLine("Test 26: Pass - Sign Up with invalid phone failed");
+            }
+            else
+            {
+                Console.WriteLine("Test 26: Fail - Sign Up with invalid phone passed");
+            }
+            bool SignUpTest04 = SiteTest.SignUp04(driver);
+            if (SignUpTest04)
+            {
+                Console.WriteLine("Test 27: Pass - Sign Up with invalid postal code failed");
+            }
+            else
+            {
+                Console.WriteLine("Test 27: Fail - Sign Up with invalid postal code passed");
+            }
+
+            bool CreateUserTest01 = SiteTest.CreateUser01(driver);
+            if (CreateUserTest01)
+            {
+                Console.WriteLine("Test 28: Pass - user created, logged in.");
+            }
+            else
+            {
+                Console.WriteLine("Test 28: Fail - user not created");
+            }
+
+            bool HomepageTest01 = SiteTest.Homepage01(driver);
+            if (HomepageTest01)
+            {
+                Console.WriteLine("Test 29: Pass - Home button went back to index.php");
+            }
+            else
+            {
+                Console.WriteLine("Test 29: Fail - Home button stayed on page");
+            }
+
+
+
+
+            //END CONNOR BLOCK
 
 
             Thread.Sleep(10000);
